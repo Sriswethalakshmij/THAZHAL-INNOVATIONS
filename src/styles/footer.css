@@ -669,3 +669,23 @@
   }
 
 }
+/* =========================================
+   MOBILE FOOTER COLUMN ALIGNMENT
+========================================= */
+
+@media (max-width: 700px) {
+  .footer-main .footer-column:nth-child(2),
+  .footer-main .footer-column:nth-child(3) {
+    text-align: center;
+  }
+
+  .footer-main .footer-column:nth-child(2) .footer-links,
+  .footer-main .footer-column:nth-child(3) .footer-links {
+    align-items: center;
+  }
+
+  .footer-main .footer-column:nth-child(2) .footer-column-title,
+  .footer-main .footer-column:nth-child(3) .footer-column-title {
+    text-align: center;
+  }
+}
