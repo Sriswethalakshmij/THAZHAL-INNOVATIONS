@@ -1,0 +1,301 @@
+/* ========================================
+   SITE HEADER
+======================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-header);
+  width: 100%;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(8, 8, 8, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+  gap: var(--space-6);
+}
+
+/* ========================================
+   LOGO
+======================================== */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.navbar-logo img {
+  display: block;
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ========================================
+   DESKTOP NAVIGATION
+======================================== */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.25rem, 3vw, 3rem);
+  margin-left: auto;
+}
+
+.navbar-links a {
+  position: relative;
+  color: var(--color-text-soft);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    opacity var(--duration-fast) var(--ease-standard);
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition:
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.navbar-links a:hover {
+  color: var(--color-text);
+}
+
+.navbar-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ========================================
+   NAVBAR CTA
+======================================== */
+
+.navbar-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background var(--duration-normal) var(--ease-standard),
+    border-color var(--duration-normal) var(--ease-standard),
+    color var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.navbar-cta-arrow {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  transition:
+    color var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.navbar-cta:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  transform: translateY(-2px);
+}
+
+.navbar-cta:hover .navbar-cta-arrow {
+  color: var(--color-bg);
+  transform: translate(2px, -2px);
+}
+
+/* ========================================
+   NAVBAR ACTIONS
+======================================== */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 17px;
+  height: 1px;
+  background: var(--color-text);
+  transition:
+    transform var(--duration-normal) var(--ease-standard),
+    opacity var(--duration-normal) var(--ease-standard);
+}
+
+.menu-toggle.is-open span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-header) - 1);
+  display: none;
+  padding: 120px var(--container-padding) 40px;
+  background: var(--color-bg);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition:
+    opacity var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 25px;
+  right: var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.mobile-menu-links a {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  transition:
+    color var(--duration-fast) var(--ease-standard);
+}
+
+.mobile-menu-links a:hover {
+  color: var(--color-accent);
+}
+
+/* ========================================
+   TABLET / MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+  .navbar {
+    min-height: 70px;
+  }
+
+  .navbar-links,
+  .navbar-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  /*
+    Full THAZHAL wordmark:
+    Keep it readable on mobile.
+  */
+
+  .navbar-logo img {
+    width: 120px;
+    height: auto;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    min-height: 66px;
+  }
+
+  .navbar-logo img {
+    width: 105px;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .mobile-menu {
+    padding-top: 105px;
+  }
+}

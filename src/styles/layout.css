@@ -1,0 +1,35 @@
+.container {
+  width: min(
+    calc(100% - (var(--container-padding) * 2)),
+    var(--container-width)
+  );
+
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+}
+
+.section-padding {
+  padding-block: var(--space-11);
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.3fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  margin-bottom: var(--space-9);
+}
+
+.section-title {
+  max-width: 12ch;
+  font-size: clamp(3rem, 7vw, 7rem);
+}
+
+.section-description {
+  max-width: 50ch;
+  font-size: var(--text-lg);
+  line-height: 1.6;
+}

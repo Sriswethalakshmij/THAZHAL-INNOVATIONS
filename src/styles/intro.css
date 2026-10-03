@@ -1,0 +1,325 @@
+/* ========================================
+   THAZHAL INNOVATIONS
+   INTRO / WHO WE ARE
+======================================== */
+
+.intro-section {
+  position: relative;
+  min-height: 100vh;
+
+  background: var(--color-bg);
+  color: var(--color-text);
+
+  overflow: hidden;
+}
+
+.intro-container {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding-top: 7rem;
+  padding-bottom: 3.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ========================================
+   SECTION LABEL
+======================================== */
+
+.intro-meta {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  color: var(--color-text-soft);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+.intro-number {
+  color: var(--color-accent);
+}
+
+.intro-line {
+  width: 44px;
+  height: 1px;
+
+  background: var(--color-border-strong);
+}
+
+.intro-label {
+  color: var(--color-text-soft);
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.intro-content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.45fr)
+    minmax(280px, 0.55fr);
+
+  align-items: end;
+
+  column-gap: clamp(4rem, 9vw, 9rem);
+
+  margin-top: clamp(5rem, 8vw, 7rem);
+  margin-bottom: clamp(5rem, 8vw, 7rem);
+}
+
+/* ========================================
+   HEADING
+======================================== */
+
+.intro-heading-wrap {
+  min-width: 0;
+}
+
+.intro-heading {
+  max-width: 780px;
+
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  /*
+     Deliberately smaller than the previous version.
+     This keeps the hierarchy closer to the Hero.
+  */
+  font-size: clamp(3rem, 5.2vw, 5.8rem);
+
+  font-weight: 700;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.045em;
+}
+
+.intro-heading span {
+  display: block;
+}
+
+.intro-accent {
+  color: var(--color-accent);
+}
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.intro-side {
+  width: 100%;
+  max-width: 390px;
+
+  padding-bottom: 0.35rem;
+}
+
+.intro-side p {
+  margin: 0;
+
+  color: var(--color-text-soft);
+
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
+
+  line-height: 1.65;
+}
+
+/* ========================================
+   BRAND
+======================================== */
+
+.intro-brand {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 2.8rem;
+
+  padding-top: 1.2rem;
+
+  border-top: 1px solid var(--color-border);
+
+  color: var(--color-text-muted);
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.intro-footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 1.25rem;
+
+  border-top: 1px solid var(--color-border);
+
+  color: var(--color-text-muted);
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+/* ========================================
+   SUBTLE DECORATIVE RINGS
+======================================== */
+
+.intro-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 390px;
+  height: 390px;
+
+  right: -190px;
+  top: 42%;
+
+  border: 1px solid rgba(200, 255, 0, 0.1);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.intro-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  right: -105px;
+  top: calc(42% + 85px);
+
+  border: 1px solid rgba(200, 255, 0, 0.07);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .intro-content {
+    grid-template-columns: 1fr;
+
+    row-gap: 3.5rem;
+
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  .intro-heading {
+    max-width: 720px;
+
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+
+  .intro-side {
+    max-width: 520px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .intro-container {
+    min-height: auto;
+
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .intro-meta {
+    gap: 0.7rem;
+
+    font-size: 0.6rem;
+  }
+
+  .intro-line {
+    width: 28px;
+  }
+
+  .intro-content {
+    margin-top: 4rem;
+    margin-bottom: 4.5rem;
+
+    row-gap: 3rem;
+  }
+
+  .intro-heading {
+    max-width: 100%;
+
+    font-size: clamp(2.8rem, 13vw, 4.5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+  }
+
+  .intro-side {
+    max-width: 100%;
+  }
+
+  .intro-side p {
+    font-size: 1rem;
+
+    line-height: 1.6;
+  }
+
+  .intro-brand {
+    margin-top: 2rem;
+  }
+
+  .intro-footer {
+    font-size: 0.55rem;
+  }
+
+  .intro-section::before {
+    width: 260px;
+    height: 260px;
+
+    right: -160px;
+  }
+
+  .intro-section::after {
+    width: 140px;
+    height: 140px;
+
+    right: -75px;
+  }
+}

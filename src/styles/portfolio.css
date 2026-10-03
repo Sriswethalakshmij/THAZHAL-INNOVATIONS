@@ -1,0 +1,1254 @@
+/* =========================================================
+   SELECTED WORK / PORTFOLIO
+   ========================================================= */
+
+.selected-work {
+  position: relative;
+  width: 100%;
+  padding: 120px 6vw 140px;
+  background: var(--color-background, #f7f7f5);
+  overflow: hidden;
+}
+
+/* =========================================================
+   SECTION INTRO
+   ========================================================= */
+
+.work-intro {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 100px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 500px);
+  align-items: center;
+  gap: 80px;
+}
+
+.work-intro-left {
+  max-width: 760px;
+}
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 28px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: #161616;
+}
+
+.section-label-number {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.section-label-line {
+  width: 55px;
+  height: 1px;
+  background: #161616;
+  opacity: 0.35;
+}
+
+/* =========================================================
+   MAIN HEADING
+   ========================================================= */
+
+.work-heading {
+  margin: 0;
+
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  font-weight: 700;
+
+  color: #111111;
+}
+
+.work-heading span {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+}
+
+/*
+   Slightly playful word treatment
+*/
+
+.work-heading span::after {
+  content: "";
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  right: -18px;
+  top: 8px;
+
+  border-radius: 50%;
+  background: currentColor;
+
+  opacity: 0.9;
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.work-description {
+  max-width: 600px;
+
+  margin: 32px 0 0;
+
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+
+  color: #656565;
+}
+
+/* =========================================================
+   PROJECT ORBIT
+   ========================================================= */
+
+.project-orbit-wrapper {
+  position: relative;
+
+  width: min(100%, 500px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  justify-self: end;
+}
+
+/* =========================================================
+   ORBIT MAIN CONTAINER
+   ========================================================= */
+
+.project-orbit {
+  position: relative;
+
+  width: 430px;
+  height: 430px;
+
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: orbitFloat 8s ease-in-out infinite;
+
+  transform-origin: center;
+}
+
+/* =========================================================
+   ORBIT RINGS
+   ========================================================= */
+
+.orbit-ring {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  border: 1px solid rgba(20, 20, 20, 0.13);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.orbit-ring-outer {
+  width: 100%;
+  height: 100%;
+
+  animation: ringRotate 18s linear infinite;
+}
+
+.orbit-ring-middle {
+  width: 76%;
+  height: 76%;
+
+  border-style: dashed;
+
+  animation: ringRotateReverse 22s linear infinite;
+}
+
+.orbit-ring-inner {
+  width: 53%;
+  height: 53%;
+
+  border-color: rgba(20, 20, 20, 0.18);
+
+  animation: ringPulse 5s ease-in-out infinite;
+}
+
+/* =========================================================
+   ORBIT CENTER
+   ========================================================= */
+
+.orbit-center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 150px;
+  height: 150px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #111111;
+  color: #ffffff;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  z-index: 5;
+}
+
+.orbit-brand-small {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  margin-bottom: 5px;
+  opacity: 0.65;
+}
+
+.orbit-brand-main {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   ORBIT PROJECT BUTTONS
+   ========================================================= */
+
+.orbit-project {
+  position: absolute;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(17, 17, 17, 0.25);
+  border-radius: 50%;
+
+  background: rgba(247, 247, 245, 0.95);
+  color: #111111;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* ---------------------------------------------------------
+   PROJECT 01 POSITION
+   --------------------------------------------------------- */
+
+.orbit-project-1 {
+  top: 8%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  animation: projectFloatOne 4.5s ease-in-out infinite;
+}
+
+/* ---------------------------------------------------------
+   PROJECT 02 POSITION
+   --------------------------------------------------------- */
+
+.orbit-project-2 {
+  right: 7%;
+  bottom: 18%;
+
+  animation: projectFloatTwo 5s ease-in-out infinite;
+}
+
+/* ---------------------------------------------------------
+   PROJECT 03 POSITION
+   --------------------------------------------------------- */
+
+.orbit-project-3 {
+  left: 7%;
+  bottom: 18%;
+
+  animation: projectFloatThree 4.7s ease-in-out infinite;
+}
+
+/* =========================================================
+   ORBIT HOVER
+   ========================================================= */
+
+.orbit-project:hover {
+  background: #111111;
+  color: #ffffff;
+
+  border-color: #111111;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+/*
+   Keep positional transforms when hovering
+*/
+
+.orbit-project-1:hover {
+  transform: translateX(-50%) scale(1.08);
+}
+
+.orbit-project-2:hover,
+.orbit-project-3:hover {
+  transform: scale(1.08);
+}
+
+/* =========================================================
+   ACTIVE ORBIT PROJECT
+   ========================================================= */
+
+.orbit-project.active {
+  background: #111111;
+  color: #ffffff;
+
+  border-color: #111111;
+
+  box-shadow:
+    0 0 0 7px rgba(17, 17, 17, 0.07),
+    0 14px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   ORBIT CAPTION
+   ========================================================= */
+
+.orbit-caption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 22px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+
+  color: #777777;
+}
+
+.orbit-caption-line {
+  width: 38px;
+  height: 1px;
+
+  background: #999999;
+}
+
+/* =========================================================
+   PROJECT LIST
+   ========================================================= */
+
+.projects-list {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 70px;
+}
+
+/* =========================================================
+   PROJECT SHOWCASE
+   ========================================================= */
+
+.project-showcase {
+  position: relative;
+
+  width: 100%;
+  min-height: 560px;
+
+  display: grid;
+  grid-template-columns: minmax(400px, 0.95fr) minmax(0, 1.05fr);
+
+  align-items: center;
+
+  gap: clamp(50px, 6vw, 100px);
+
+  padding: 55px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 28px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.04);
+
+  scroll-margin-top: 100px;
+
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease,
+    border-color 0.6s ease;
+}
+
+/* =========================================================
+   ACTIVE PROJECT
+   ========================================================= */
+
+.project-showcase.project-active {
+  border-color: rgba(17, 17, 17, 0.16);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.07);
+}
+
+.project-showcase:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   PROJECT IMAGE
+   ========================================================= */
+
+.project-image-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 390px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #eeeeeb;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-showcase:hover .project-image {
+  transform: scale(1.035);
+}
+
+/* =========================================================
+   IMAGE NUMBER
+   ========================================================= */
+
+.project-image-number {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  color: #111111;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  z-index: 3;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   IMAGE OVERLAY
+   ========================================================= */
+
+.project-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(0, 0, 0, 0.05)
+    );
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+/* =========================================================
+   PROJECT CONTENT
+   ========================================================= */
+
+.project-content {
+  width: 100%;
+  max-width: 620px;
+
+  padding-right: 15px;
+}
+
+/* =========================================================
+   TOP LINE
+   ========================================================= */
+
+.project-top-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: #8a8a8a;
+}
+
+.project-top-line span:first-child {
+  color: #111111;
+}
+
+/* =========================================================
+   PROJECT TITLE
+   ========================================================= */
+
+.project-title {
+  margin: 0;
+
+  font-size: clamp(30px, 3.2vw, 52px);
+  line-height: 0.98;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 750;
+
+  color: #111111;
+}
+
+/* =========================================================
+   PROJECT NAME
+   ========================================================= */
+
+.project-name {
+  margin: 20px 0 0;
+
+  font-size: 19px;
+  line-height: 1.4;
+
+  font-weight: 600;
+
+  color: #444444;
+}
+
+/* =========================================================
+   TECHNOLOGIES
+   ========================================================= */
+
+/* =========================================================
+   TECHNOLOGIES — THAZHAL STYLE
+   ========================================================= */
+
+.project-tech {
+  display: inline-flex;
+  align-items: center;
+
+  margin-top: 24px;
+  padding: 11px 17px;
+
+  border: 1px solid rgba(184, 255, 0, 0.38);
+  border-radius: 999px;
+
+  background: rgba(184, 255, 0, 0.06);
+
+  color: #b8ff00;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  box-shadow:
+    0 0 0 1px rgba(184, 255, 0, 0.03),
+    inset 0 0 20px rgba(184, 255, 0, 0.025);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-tech:hover {
+  background: rgba(184, 255, 0, 0.12);
+
+  border-color: rgba(184, 255, 0, 0.7);
+
+  box-shadow:
+    0 0 20px rgba(184, 255, 0, 0.08),
+    inset 0 0 20px rgba(184, 255, 0, 0.04);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PROJECT DESCRIPTION
+   ========================================================= */
+
+.project-description {
+  margin: 25px 0 0;
+
+  max-width: 570px;
+
+  font-size: 15px;
+  line-height: 1.75;
+
+  color: #6a6a6a;
+}
+
+/* =========================================================
+   PROJECT LINK
+   ========================================================= */
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 32px;
+
+  color: #111111;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  transition:
+    gap 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.project-link:hover {
+  gap: 20px;
+  opacity: 0.6;
+}
+
+.project-link-arrow {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  border-radius: 50%;
+
+  font-size: 17px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.project-link:hover .project-link-arrow {
+  transform: rotate(8deg);
+
+  background: #111111;
+  color: #ffffff;
+}
+
+/* =========================================================
+   ORBIT ANIMATIONS
+   ========================================================= */
+
+@keyframes orbitFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(0.6deg);
+  }
+}
+
+@keyframes ringRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes ringRotateReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes ringPulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.035);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   FLOATING PROJECT NUMBERS
+   ========================================================= */
+
+@keyframes projectFloatOne {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+@keyframes projectFloatTwo {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-9px) rotate(2deg);
+  }
+}
+
+@keyframes projectFloatThree {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-7px) rotate(-2deg);
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .selected-work {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .work-intro {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .project-orbit-wrapper {
+    justify-self: center;
+  }
+
+  .project-showcase {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+
+    padding: 40px;
+  }
+
+  .project-image-wrapper {
+    height: 350px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .selected-work {
+    padding: 85px 20px 90px;
+  }
+
+  /* -----------------------------------------
+     INTRO
+  ----------------------------------------- */
+
+  .work-intro {
+    margin-bottom: 65px;
+
+    gap: 55px;
+  }
+
+  .section-label {
+    margin-bottom: 22px;
+
+    font-size: 10px;
+  }
+
+  .section-label-line {
+    width: 38px;
+  }
+
+  .work-heading {
+    font-size: clamp(43px, 13vw, 65px);
+  }
+
+  .work-description {
+    margin-top: 25px;
+
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* -----------------------------------------
+     ORBIT
+  ----------------------------------------- */
+
+  .project-orbit-wrapper {
+    width: 100%;
+  }
+
+  .project-orbit {
+    width: min(88vw, 360px);
+    height: min(88vw, 360px);
+  }
+
+  .orbit-center {
+    width: 120px;
+    height: 120px;
+  }
+
+  .orbit-brand-small {
+    font-size: 8px;
+  }
+
+  .orbit-brand-main {
+    font-size: 12px;
+  }
+
+  .orbit-project {
+    width: 54px;
+    height: 54px;
+
+    font-size: 12px;
+  }
+
+  .orbit-project-1 {
+    top: 7%;
+  }
+
+  .orbit-project-2 {
+    right: 4%;
+    bottom: 15%;
+  }
+
+  .orbit-project-3 {
+    left: 4%;
+    bottom: 15%;
+  }
+
+  /* -----------------------------------------
+     PROJECTS
+  ----------------------------------------- */
+
+  .projects-list {
+    gap: 45px;
+  }
+
+  .project-showcase {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding: 20px;
+
+    border-radius: 22px;
+
+    scroll-margin-top: 75px;
+  }
+
+  .project-image-wrapper {
+    height: 240px;
+
+    border-radius: 16px;
+  }
+
+  .project-image-number {
+    top: 14px;
+    left: 14px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+  .project-content {
+    padding: 0 3px 10px;
+  }
+
+  .project-top-line {
+    margin-bottom: 20px;
+  }
+
+  .project-title {
+    font-size: 34px;
+  }
+
+  .project-name {
+    font-size: 17px;
+  }
+
+.project-tech {
+  font-size: 9px;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+
+  padding: 9px 12px;
+
+  max-width: 100%;
+  white-space: normal;
+}
+
+  .project-description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .project-link {
+    margin-top: 25px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .selected-work {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .project-orbit {
+    width: 320px;
+    height: 320px;
+  }
+
+  .orbit-center {
+    width: 105px;
+    height: 105px;
+  }
+
+  .orbit-brand-main {
+    font-size: 10px;
+  }
+
+  .orbit-project {
+    width: 48px;
+    height: 48px;
+  }
+
+  .project-showcase {
+    padding: 16px;
+  }
+
+  .project-image-wrapper {
+    height: 215px;
+  }
+
+  .project-title {
+    font-size: 30px;
+  }
+
+  .project-name {
+    font-size: 16px;
+  }
+}
+
+/* =========================================================
+   REDUCE MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-orbit,
+  .orbit-ring,
+  .orbit-project,
+  .project-image,
+  .project-showcase,
+  .project-link,
+  .project-link-arrow {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .project-showcase:hover {
+    transform: none;
+  }
+}
+/* =========================================================
+   SELECTED WORK — THAZHAL INNOVATIONS THEME
+   ========================================================= */
+
+.selected-work {
+  background: #080808;
+  color: #f5f4ef;
+}
+
+/* Section label */
+.selected-work .section-label {
+  color: #8f8f8a;
+}
+
+.selected-work .section-label-number {
+  color: #b8ff00;
+}
+
+.selected-work .section-label-line {
+  background: #343434;
+}
+
+/* Main heading */
+.selected-work .work-heading {
+  color: #f5f4ef;
+}
+
+.selected-work .work-heading span {
+  color: #b8ff00;
+}
+
+/* Description */
+.selected-work .work-description {
+  color: #92928d;
+}
+
+/* =========================================================
+   ORBIT
+   ========================================================= */
+
+.selected-work .project-orbit {
+  color: #f5f4ef;
+}
+
+.selected-work .orbit-ring {
+  border-color: rgba(184, 255, 0, 0.22);
+}
+
+.selected-work .orbit-center {
+  color: #f5f4ef;
+}
+
+.selected-work .orbit-brand-small {
+  color: #8f8f8a;
+}
+
+.selected-work .orbit-brand-main {
+  color: #b8ff00;
+}
+
+/* Orbit project numbers */
+.selected-work .orbit-project {
+  background: #080808;
+  color: #f5f4ef;
+  border: 1px solid rgba(184, 255, 0, 0.45);
+}
+
+.selected-work .orbit-project:hover,
+.selected-work .orbit-project.active {
+  background: #b8ff00;
+  color: #080808;
+  border-color: #b8ff00;
+}
+
+/* Orbit caption */
+.selected-work .orbit-caption {
+  color: #777772;
+}
+
+.selected-work .orbit-caption-line {
+  background: #b8ff00;
+}
+
+/* =========================================================
+   PROJECT SHOWCASE
+   ========================================================= */
+
+.selected-work .project-showcase {
+  background: #0b0b0b;
+  border: 1px solid #252525;
+}
+
+/* Image */
+.selected-work .project-image-wrapper {
+  background: #111111;
+}
+
+.selected-work .project-image-number {
+  background: #b8ff00;
+  color: #080808;
+}
+
+/* Project information */
+.selected-work .project-top-line {
+  color: #777772;
+}
+
+.selected-work .project-top-line span:first-child {
+  color: #b8ff00;
+}
+
+.selected-work .project-title {
+  color: #f5f4ef;
+}
+
+.selected-work .project-name {
+  color: #b8ff00;
+}
+
+.selected-work .project-tech {
+  color: #a1a19c;
+}
+
+.selected-work .project-description {
+  color: #858580;
+}
+
+/* =========================================================
+   PROJECT LINK
+   ========================================================= */
+
+.selected-work .project-link {
+  color: #f5f4ef;
+  border-color: #3a3a3a;
+}
+
+.selected-work .project-link:hover {
+  background: #b8ff00;
+  color: #080808;
+  border-color: #b8ff00;
+}
+
+.selected-work .project-link-arrow {
+  color: #b8ff00;
+}
+
+.selected-work .project-link:hover .project-link-arrow {
+  color: #080808;
+}
+
+/* =========================================================
+   PROJECT ACTIVE STATE
+   ========================================================= */
+
+.selected-work .project-active {
+  border-color: rgba(184, 255, 0, 0.45);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .selected-work {
+    background: #080808;
+  }
+
+  .selected-work .project-showcase {
+    background: #0b0b0b;
+    border-color: #252525;
+  }
+}

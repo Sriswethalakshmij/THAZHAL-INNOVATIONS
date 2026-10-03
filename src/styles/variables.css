@@ -1,0 +1,92 @@
+:root {
+  /* ========================================
+     THAZHAL COLOR SYSTEM
+  ======================================== */
+
+   --color-bg: #080808;
+  --color-bg-soft: #101010;
+  --color-surface: #151515;
+
+  --color-text: #f5f5f0;
+  --color-text-soft: #c5c5bd;
+  --color-text-muted: #85857d;
+
+  --color-accent: #d6ff24;
+  --color-accent-soft: rgba(214, 255, 36, 0.12);
+
+  --color-border: rgba(245, 245, 240, 0.14);
+  --color-border-strong: rgba(214, 255, 36, 0.35);
+ 
+  /* ========================================
+     TYPOGRAPHY
+  ======================================== */
+
+  --font-display: "Arial Black", Arial, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+
+  /* ========================================
+     FONT SIZES
+  ======================================== */
+
+  --text-xs: 0.7rem;
+  --text-sm: 0.85rem;
+  --text-base: 1rem;
+  --text-lg: 1.15rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 3.5rem;
+  --text-4xl: 5rem;
+  --text-hero: clamp(3.2rem, 6vw, 5.8rem);
+
+  /* ========================================
+     SPACING
+  ======================================== */
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --space-11: 10rem;
+
+  /* ========================================
+     LAYOUT
+  ======================================== */
+
+  --container-width: 1440px;
+  --container-padding: clamp(1.25rem, 4vw, 4rem);
+
+  /* ========================================
+     BORDERS / RADIUS
+  ======================================== */
+
+  --border-width: 1px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+
+  /* ========================================
+     MOTION
+  ======================================== */
+
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --duration-fast: 0.25s;
+  --duration-normal: 0.5s;
+  --duration-slow: 0.9s;
+
+  /* ========================================
+     Z-INDEX
+  ======================================== */
+
+  --z-base: 1;
+  --z-header: 100;
+  --z-overlay: 500;
+  --z-modal: 1000;
+}
